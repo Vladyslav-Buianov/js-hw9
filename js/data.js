@@ -47,11 +47,11 @@ const numbers = [];
 let total = 0;
 
 const sumProces = function (mess, nums, tot) {
-const isFormatted = 
+const isDefined = 
     function (mess) {
         return mess === null;
     };
-    if (isFormatted(mess) === false) {
+    if (isDefined(mess) === false) {
         nums = Array.from(mess);
         for (const addend of nums) {
             tot += Number.parseInt(addend);
@@ -59,7 +59,7 @@ const isFormatted =
         return console.log(tot);
     }
 
-isFormatted(input);
+isDefined(input);
 }
 
 sumProces(input, numbers, total);
