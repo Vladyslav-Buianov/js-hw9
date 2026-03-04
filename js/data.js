@@ -1,14 +1,19 @@
 const array = ['Mango', 'Poly', 'Ajax'];
 
 function logItems(array) {
+    let res =``;
     for (let i = 0; i < array.length; i++) {
-        const res = `${i + 1} - ${array[i]}`;
-        console.log(res);
+        if (i > 0 === true) {
+            res += ` ${i + 1} - ${array[i]}`;
+        }else {
+            res += `${i + 1} - ${array[i]}`;
+        }
+        
     }
-    return; 
+    return res;
 }
 
-logItems(array);
+console.log(logItems(array));
 
 function findLongestWord(string) {
     string = string.split(' ');
@@ -18,29 +23,27 @@ function findLongestWord(string) {
             max = string[i];
         }
     }
-    console.log(max);
-    return;
+    return max;
 }
 
-findLongestWord('Lorem ipsum dolor sit amet et consectetur adipiscing elit');
+console.log(findLongestWord('Lorem ipsum dolor sit amet et consectetur adipiscing elit'));
 
 function formatString(string) {
     if (string.length <= 40) {
-        console.log(string);
+        return string;
     } else if(string.length > 40) {
         const trunk = string.slice(0, 40).padEnd(43, '.');
-        console.log(trunk);
+        return trunk;
     }
-    return;
 }
 
-formatString('Lorem ipsum dolor sit amet consectetur adipisicing elit.');
+console.log(formatString('Lorem ipsum dolor sit amet consectetur adipisicing elit.'));
 
 const checkForSpam = function (message) {
     return message.toLowerCase().includes('sale', 'spam') === true;
 }
 
-checkForSpam(' Not spam.')
+console.log(checkForSpam('Funko pop sale! Not spam.'));
 
 let input = prompt('Insert random numbers without letters and simbols:');
 const numbers = [];
@@ -56,10 +59,10 @@ const isDefined =
         for (const addend of nums) {
             tot += Number.parseInt(addend);
         }
-        return console.log(tot);
+        return tot;
     }
 
 isDefined(input);
 }
 
-sumProces(input, numbers, total);
+console.log(sumProces(input, numbers, total));
